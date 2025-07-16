@@ -1,40 +1,47 @@
-<div class="bg-yellow-800 h-screen w-screen text-shadow-yellow-100 flex items-start justify-center">
+<div class="bg-yellow-600 h-screen w-screen text-shadow-yellow-100 flex items-start justify-center">
 
+  <div class="flex flex-row mr-30 ml-30">
 
-  <div [ngClass]="{
+    <div [ngClass]="{
       'translate-x-0 opacity-100': UlterVisible,
       '-translate-x-80 opacity-0': !UlterVisible
     }" class="transition-all duration-1000 ease-out transform mt-40 pl-10 text-shadow-green-100">
-    <h1 [ngClass]="{
+      <h1 [ngClass]="{
       'translate-x-0 opacity-100': UlterVisible,
       'translate-x-20 opacity-0': !UlterVisible
     }"
-      class="transition-all duration-1000 ease-out transform  text-shadow-green-100 text-green-100 text-2xl not-italic">
-      "Taste Tradition, One Jar at a Time."
-    </h1>
-    <p [ngClass]="{
+        class="transition-all duration-1000 ease-out transform font-extrabold text-shadow-green-100 text-green-100 text-2xl not-italic">
+        "Taste Tradition, One Jar at a Time."
+      </h1>
+      <p [ngClass]="{
       'translate-x-0 opacity-100': UlterVisible,
       'translate-x-40 opacity-0': !UlterVisible
     }"
-      class="transition-all duration-1500 ease-out transform mt-5  text-shadow-green-100 italic text-3xl text-white font-mono  font-bold">
-      Authentic Veg & Non-Veg Pickles Made with Love, Spice & Heritage
-    </p>
-    <p [ngClass]="{
+        class="transition-all duration-1500 ease-out transform mt-5 font-bold text-shadow-green-100 italic text-3xl text-white ">
+        Authentic Veg & Non-Veg Pickles Made with Love, Spice & Heritage
+      </p>
+      <p [ngClass]="{
       'translate-x-0 opacity-100 ': UlterVisible,
       'translate-x-60 opacity-0 ': !UlterVisible
     }" class="transition-all duration-1500 ease-out transform mt-4 text-white  text-shadow-green-100 text-lg ">
-      we bring you a mouthwatering collection of authentic homemade pickles — both vegetarian and non-vegetarian —
-      prepared with love, tradition, and the finest ingredients.
-    </p>
-    <button [ngClass]="{
+        we bring you a mouthwatering collection of authentic homemade pickles — both vegetarian and non-vegetarian —
+        prepared with love, tradition, and the finest ingredients.
+      </p>
+      <button [ngClass]="{
       'translate-y-0 opacity-100': UlterVisible,
       'translate-y-80 opacity-0': !UlterVisible
     }"
-      class="transition-all duration-1500 ease-out transform mt-5 text-shadow-green-100 bg-green-100  p-4 rounded-lg italic font-bold text-purple-800">
-      <a href="/login">Go And Get Orders</a>
-    </button>
+        class="transition-all duration-1500 ease-out transform mt-5 text-shadow-green-100 bg-yellow-600 border-2 border-white p-4 rounded-lg italic font-bold text-purple-800">
+        <a href="/pickles">Go And Get Orders</a>
+      </button>
+    </div>
+    <div>
+      <img src="to.png" atl="Pickel image" [ngClass]="{
+      'translate-x-0 opacity-100 ': UlterVisible,
+      'translate-x-60 opacity-0 ': !UlterVisible
+    }" class="transition-all duration-1500 ease-out transform size-150 ">
+    </div>
   </div>
-
 
 
 </div>

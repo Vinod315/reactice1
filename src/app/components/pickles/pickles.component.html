@@ -1,136 +1,253 @@
-
-<div class=" bg-yellow-600 h-auto w-screen rounded-md ">
-
-<div class="flex justify-center pt-5">
-
-
-
- 
-    <ul >
-      
-        <details>
-          <summary class="text-base-300 text-2xl capitalize hover:bg-yellow-800 p-3 rounded-sm border-sm-black-100"> Would you like to choose Veg or Non-veg ?</summary>
-          <ul class="bg-base-300 rounded-b-md border-2 border-base-600 p-2">
-            <li><a routerLink="/veg" class=" text-yellow-600 text-xl pb-4 pl-4 capitalize  underline  hover:text-black ">Veg Pickles</a></li>
-            <li><a routerLink="/non" class=" text-yellow-600 text-xl pl-4 capitalize underline hover:text-black">  Non - Veg Pickles</a></li>
-          </ul>
-        </details>
-    
+<div class="bg-yellow-600 h-auto w-screen rounded-md">
+  <div class="flex justify-center pt-5">
+    <ul>
+      <details>
+        <summary class=" text-2xl capitalize hover:bg-white text-black p-3 rounded-sm border-sm-black-100 border-white border-2 mb-3">
+          Would you like to choose Veg or Non-veg?
+        </summary>
+        <div class="join grid grid-cols-2 text-white mb-5">
+          <button class="join-item btn btn-outline hover:text-black" (click)="veg()">Veg
+          </button>
+          <button class="join-item btn btn-outline hover:text-black" (click)="nonveg()">Non-Veg
+          </button>
+        </div>
+      </details>
     </ul>
+  </div>
+
+  @if (pickleType === undefined) {
+    <div class="bg-yellow-600 min-h-140 min-w-80 rounded-md ml-20 mr-20 border-white border-2 flex flex-row flex-wrap justify-center">
+
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="Mango" alt="Mango" class="w-90" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Mango Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="non-veg/Chicken.webp" alt="Chicken" class="w-90"/>
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Chicken Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="RedChilli.webp" alt="RedChilli"class="w-90"/>
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Red-Chilli Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="non-veg/Mutton.webp" alt="Mutton"class="w-90" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Mutton Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="Amla.webp" alt="Amla" class="w-90"/>
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Amla Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="non-veg/Prawns.webp" alt="Prawns" class="w-90" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Prawns Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  } @else if (pickleType === "Veg") {
     
+    <div class="bg-yellow-600 min-h-140 min-w-80 rounded-md ml-20 mr-20 border-white border-2 flex flex-row flex-wrap justify-center">
 
-  </div>
-  <div class="bg-white min-h-140 min-w-80 rounded-md ml-20 mr-20 border-gray-200 flex flex-row flex-wrap justify-center">
-<div class="card bg-base-100 w-80 shadow-xl m-5">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <div class="badge badge-outline">Fashion</div>
-      <div class="badge badge-outline">Products</div>
-    </div>
-  </div>
-</div>
+    
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="Mango" alt="Mango" class="w-90" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Mango Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="Tomato.webp" alt="Tomato" class="w-90"/>
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Tomato Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="RedChilli.webp" alt="RedChilli"class="w-90"/>
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Red-Chilli Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="Lemon.webp" alt="Lemon"class="w-90" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Lemon Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="Amla.webp" alt="Amla" class="w-90"/>
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Amla Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="Allam.webp" alt="Shoes" class="w-90" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Ginger Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
 
-<div class="card bg-base-100 w-80 shadow-xl m-5">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <div class="badge badge-outline">Fashion</div>
-      <div class="badge badge-outline">Products</div>
     </div>
-  </div>
-</div>
 
-<div class="card bg-base-100 w-80 shadow-xl m-5">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <div class="badge badge-outline">Fashion</div>
-      <div class="badge badge-outline">Products</div>
-    </div>
-  </div>
-</div>
-<div class="card bg-base-100 w-80 shadow-xl m-5">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <div class="badge badge-outline">Fashion</div>
-      <div class="badge badge-outline">Products</div>
-    </div>
-  </div>
-</div>
-<div class="card bg-base-100 w-80 shadow-xl m-5">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <div class="badge badge-outline">Fashion</div>
-      <div class="badge badge-outline">Products</div>
-    </div>
-  </div>
-</div>
-<div class="card bg-base-100 w-80 shadow-xl m-5">
-  <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <div class="badge badge-outline">Fashion</div>
-      <div class="badge badge-outline">Products</div>
-    </div>
-  </div>
-</div>
+  } @else if (pickleType === "NonVeg") {
+    <div class="bg-yellow-600 min-h-140 min-w-80 rounded-md ml-20 mr-20 border-white border-2 flex flex-row flex-wrap justify-center">
 
-  </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="non-veg/Chicken.webp" alt="Chicken" class="w-90" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Chicken-Boneless Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="non-veg/Chicken.webp" alt="Chicken" class="w-90"/>
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Chicken Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="non-veg/Mutton.webp" alt="Mutton boneless"class="w-90"/>
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Mutton-Boneless Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="non-veg/Mutton.webp" alt="Mutton"class="w-90" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Mutton Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="non-veg/MuttonCheema.webp" alt="Mutton" class="w-90"/>
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Mutton-Cheema Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+        <figure>
+          <img src="non-veg/Prawns.webp" alt="Prawns" class="w-90" />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">Prawns Pickle</h2>
+          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+          <div class="card-actions justify-end">
+            <div class="badge badge-outline">Add To Cart</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  }
 </div>
