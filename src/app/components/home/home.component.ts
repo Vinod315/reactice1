@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CartService } from '../../services/cart.service';
 
 
 @Component({
@@ -11,12 +12,16 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   UlterVisible = false;
-
+  
   ngOnInit(){
 
     setTimeout(() => {
       this.UlterVisible = true;
     }, 200); //
   }
+ 
 
-}
+
+  }
+
+

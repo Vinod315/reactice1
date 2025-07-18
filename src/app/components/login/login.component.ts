@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, NgModule } from '@angular/core';
+import { Component, effect, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +10,11 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  constructor(private router :Router) { }
+
+  constructor(private router :Router) {
+    
+
+   }
   pageVisible: boolean = false;
   username = "";
   password = "";
@@ -31,5 +35,9 @@ export class LoginComponent {
     }
 
   }
+  
+  
+
+    
 
 }

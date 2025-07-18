@@ -2,7 +2,8 @@
   <div class="flex justify-center pt-5">
     <ul>
       <details>
-        <summary class=" text-2xl capitalize hover:bg-white text-black p-3 rounded-sm border-sm-black-100 border-white border-2 mb-3">
+        <summary
+          class=" text-2xl capitalize hover:bg-white text-black p-3 rounded-sm border-sm-black-100 border-white border-2 mb-3">
           Would you like to choose Veg or Non-veg?
         </summary>
         <div class="join grid grid-cols-2 text-white mb-5">
@@ -12,242 +13,321 @@
           </button>
         </div>
       </details>
-    </ul>
+    </ul> 
+
+  </div>
+  <div *ngIf="showAddedAlert" role="alert"
+    class="  rounded-sm mb-3.5 flex justify-center max-w-sm mx-auto  bg-yellow-600 border-2 border-blue-800 text-blue-800 font-bold">
+    <span>You're pickle has been added to the Cart!</span>
+  </div>
+  @if (pickleType === undefined) {
+  <div
+    class="bg-yellow-600 min-h-140 min-w-80 rounded-md ml-20 mr-20 border-white border-2 flex flex-row flex-wrap justify-center">
+
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="Mango" alt="Mango" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle1 class="card-title">Mango Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price1 id="idof" class="text-yellow-600 font-bold">600</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle1.innerText, +Price1.innerText )">Add To
+            Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="non-veg/Chicken.webp" alt="Chicken" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle2 class="card-title">Chicken Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price2 id="idof" class="text-yellow-600 font-bold">1000</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle2.innerText, +Price2.innerText )">Add To
+            Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="RedChilli.webp" alt="RedChilli" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle3 class="card-title">Red-Chilli Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price3 id="idof" class="text-yellow-600 font-bold">500</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle3.innerText, +Price3.innerText )">Add To
+            Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="non-veg/Mutton.webp" alt="Mutton" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle4 class="card-title">Mutton Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price4 id="idof" class="text-yellow-600 font-bold">1500</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle4.innerText, +Price4.innerText )">Add To
+            Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="Amla.webp" alt="Amla" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle5 class="card-title">Amla Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price5 id="idof" class="text-yellow-600 font-bold">600</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle5.innerText, +Price5.innerText )">Add To
+            Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="non-veg/Prawns.webp" alt="Prawns" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle6 class="card-title">Prawns Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price6 id="idof" class="text-yellow-600 font-bold">1000</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle6.innerText, +Price6.innerText )">Add To
+            Cart</button>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  } @else if (pickleType === "Veg") {
+
+  <div
+    class="bg-yellow-600 min-h-140 min-w-80 rounded-md ml-20 mr-20 border-white border-2 flex flex-row flex-wrap justify-center">
+
+
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="Mango" alt="Mango" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle1 class="card-title">Mango Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price1 id="idof" class="text-yellow-600 font-bold">600</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle1.innerText, +Price1.innerText )">Add To
+            Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="Tomato.webp" alt="Tomato" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle7 class="card-title">Tomato Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price7 id="idof" class="text-yellow-600 font-bold">700</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle7.innerText, +Price7.innerText )">Add To
+            Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="RedChilli.webp" alt="RedChilli" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle3 class="card-title">Red-Chilli Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price3 id="idof" class="text-yellow-600 font-bold">500</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle3.innerText, +Price3.innerText )">Add To
+            Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="Lemon.webp" alt="Lemon" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle8 class="card-title">Lemon Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price8 id="idof" class="text-yellow-600 font-bold">700</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle8.innerText, +Price8.innerText )">Add To
+            Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="Amla.webp" alt="Amla" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle5 class="card-title">Amla Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price5 id="idof" class="text-yellow-600 font-bold">700</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle5.innerText, +Price5.innerText )">Add To
+            Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="Allam.webp" alt="Shoes" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle9 class="card-title">Ginger Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price9 id="idof" class="text-yellow-600 font-bold">700</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle9.innerText, +Price9.innerText )">Add To
+            Cart</button>
+
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  @if (pickleType === undefined) {
-    <div class="bg-yellow-600 min-h-140 min-w-80 rounded-md ml-20 mr-20 border-white border-2 flex flex-row flex-wrap justify-center">
-
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="Mango" alt="Mango" class="w-90" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Mango Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="non-veg/Chicken.webp" alt="Chicken" class="w-90"/>
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Chicken Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="RedChilli.webp" alt="RedChilli"class="w-90"/>
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Red-Chilli Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="non-veg/Mutton.webp" alt="Mutton"class="w-90" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Mutton Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="Amla.webp" alt="Amla" class="w-90"/>
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Amla Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="non-veg/Prawns.webp" alt="Prawns" class="w-90" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Prawns Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  } @else if (pickleType === "Veg") {
-    
-    <div class="bg-yellow-600 min-h-140 min-w-80 rounded-md ml-20 mr-20 border-white border-2 flex flex-row flex-wrap justify-center">
-
-    
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="Mango" alt="Mango" class="w-90" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Mango Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="Tomato.webp" alt="Tomato" class="w-90"/>
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Tomato Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="RedChilli.webp" alt="RedChilli"class="w-90"/>
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Red-Chilli Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="Lemon.webp" alt="Lemon"class="w-90" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Lemon Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="Amla.webp" alt="Amla" class="w-90"/>
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Amla Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="Allam.webp" alt="Shoes" class="w-90" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Ginger Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
   } @else if (pickleType === "NonVeg") {
-    <div class="bg-yellow-600 min-h-140 min-w-80 rounded-md ml-20 mr-20 border-white border-2 flex flex-row flex-wrap justify-center">
+  <div
+    class="bg-yellow-600 min-h-140 min-w-80 rounded-md ml-20 mr-20 border-white border-2 flex flex-row flex-wrap justify-center">
 
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="non-veg/Chicken.webp" alt="Chicken" class="w-90" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Chicken-Boneless Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="non-veg/Chicken.webp" alt="Chicken" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle10 class="card-title">Chicken-Boneless Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price10 id="idof" class="text-yellow-600 font-bold">1200</div>
+          <button (click)=" cartButton(Pickle10.innerText, +Price10.innerText)" class="badge badge-outline">Add To
+            Cart</button>
         </div>
       </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="non-veg/Chicken.webp" alt="Chicken" class="w-90"/>
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Chicken Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="non-veg/Chicken.webp" alt="Chicken" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle2 class="card-title">Chicken Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price2 id="idof" class="text-yellow-600 font-bold">1000</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle2.innerText, +Price2.innerText )">Add To
+            Cart</button>
+
         </div>
       </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="non-veg/Mutton.webp" alt="Mutton boneless"class="w-90"/>
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Mutton-Boneless Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="non-veg/Mutton.webp" alt="Mutton boneless" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle11 class="card-title">Mutton-Boneless Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price11 id="idof" class="text-yellow-600 font-bold">1800</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle11.innerText, +Price11.innerText )">Add To
+            Cart</button>
+
         </div>
       </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="non-veg/Mutton.webp" alt="Mutton"class="w-90" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Mutton Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="non-veg/Mutton.webp" alt="Mutton" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle4 class="card-title">Mutton Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price4 id="idof" class="text-yellow-600 font-bold">1500</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle4.innerText, +Price4.innerText )">Add To
+            Cart</button>
+
         </div>
       </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="non-veg/MuttonCheema.webp" alt="Mutton" class="w-90"/>
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Mutton-Cheema Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="non-veg/MuttonCheema.webp" alt="Mutton" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle12 class="card-title">Mutton-Cheema Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price12 id="idof" class="text-yellow-600 font-bold">2000</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle12.innerText, +Price12.innerText )">Add To
+            Cart</button>
+
         </div>
       </div>
-      <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
-        <figure>
-          <img src="non-veg/Prawns.webp" alt="Prawns" class="w-90" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Prawns Pickle</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <div class="badge badge-outline">Add To Cart</div>
-          </div>
+    </div>
+    <div class="card bg-base-100 w-80 h-2/4 shadow-xl m-5">
+      <figure>
+        <img src="non-veg/Prawns.webp" alt="Prawns" class="w-90" />
+      </figure>
+      <div class="card-body">
+        <h2 #Pickle6 class="card-title">Prawns Pickle</h2>
+        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+        <div class="card-actions justify-end">
+          <label for="idof" class="font-extrabold">Price/KG : </label>
+          <div #Price6 id="idof" class="text-yellow-600 font-bold">1500</div>
+          <button class="badge badge-outline" (click)="cartButton(Pickle6.innerText, +Price6.innerText )">Add To
+            Cart</button>
+
         </div>
       </div>
+
 
     </div>
-  }
-</div>
+    
+
+  </div>
+}

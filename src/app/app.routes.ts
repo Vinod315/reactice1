@@ -5,6 +5,7 @@ import { PicklesComponent } from './components/pickles/pickles.component';
 import { NonComponent } from './components/non/non.component';
 import { VegComponent } from './components/veg/veg.component';
 import { ButtonLoginComponent } from './components/button-login/button-login.component';
+import { ViewCartComponent } from './components/view-cart/view-cart.component';
 export const routes: Routes = [
     {
         path: '', component: HomeComponent, title: "Home"
@@ -17,6 +18,7 @@ export const routes: Routes = [
     },
     { path: "non", component: NonComponent, title: "non-veg" },
     { path: "veg", component: VegComponent, title: "veg" },
-    { path: "button-login", component: ButtonLoginComponent, title: "button-login" }
+    { path: "button-login", component: ButtonLoginComponent, title: "button-login" },
+    {path:"viewcart", component:ViewCartComponent, title:"ViewCart"}
 
 ];
