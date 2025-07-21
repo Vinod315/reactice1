@@ -28,10 +28,7 @@ export class PicklesComponent {
 
   constructor(private cartService: CartService) {
 
-    effect(() => {
-      this.cartService.updatedCount(this.value);
-
-    })
+  
   }
   cartButtonClicked() {
     this.value = this.value + 1;
@@ -49,7 +46,7 @@ export class PicklesComponent {
     this.item = { pickleName: PickleName, Price: Price };
     this.cartService.updateSelectedItem(this.item);
     
-    console.log("at this.pickleType",this.item);
+   
 
   }
   veg() {

@@ -1,10 +1,33 @@
-<div class="bg-yellow-600   w-screen rounded-md h-screen">
-    <div 
-    class="bg-yellow-600  min-h-140 min-w-50 rounded-md ml-20 mr-20 border-white border-2 flex flex-row flex-wrap justify-center">
-    
-   <i class="font-extrabold text-shadow-warning-content mt-40">Working on it!</i>
-   
+<div class="bg-yellow-600  w-screen rounded-md h-full">
 
-    </div>
+  <h1 class="flex justify-center font-bold text-3xl shadow-50 pt-30 ">Cart Items<span> <svg xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 mt-3 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg></span></h1>
+  <div
+    class="bg-yellow-600  min-h-140 min-w-50 rounded-md ml-20 mr-20 border-white border-2 flex flex-row flex-wrap justify-center mt-10 mb-5">
+    <!-- <h2 class="p-4 pb-2 text-xs opacity-60 tracking-wide ">Pickles has been added into the Cart</h2> -->
+    <Ol *ngFor="let ItemData of DetailsArray"  class="list bg-yellow-600 w-5/8 rounded-box shadow-md mt-5 mb-5 border-white border-2 text-white">
+
+     <li class="list-row">
+
+        <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profokile/demo/1@94.webp" /></div>
+        <div class="list-col-grow flex flex-row">
+          <div>{{ ItemData.pickleName}}</div>
+          <div class="text-md pl-5 uppercase font-semibold opacity-60">{{ ItemData.Price}}</div>
+        </div>
+        <!-- <button class="btn btn-square btn-ghost">
+      <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M6 3L20 12 6 21 6 3z"></path></g></svg>
+    </button>  -->
+      </li>  
+
+      <button  class="flex justify-center font-extrabold text-shadow-warning-content ">....Working on it!....</button>
+    </Ol>
+
+
+
+
+  </div>
 
 </div>

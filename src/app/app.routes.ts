@@ -17,8 +17,11 @@ export const routes: Routes = [
         path: "pickles", component: PicklesComponent, title: "Pickles"
     },
     { path: "non", component: NonComponent, title: "non-veg" },
+
     { path: "veg", component: VegComponent, title: "veg" },
+
     { path: "button-login", component: ButtonLoginComponent, title: "button-login" },
+    
     {path:"viewcart", component:ViewCartComponent, title:"ViewCart"}
 
 ];
