@@ -28,12 +28,16 @@ constructor(private cartService:CartService){}
       console.log('Items in cart:', this.DetailsArray);
     });
   }
-  quantityIncrease(id:number){
-   this.DetailsArray[id].quantity+=1;
-   console.log(id);
-  }
-  // quantityDecrease(){
+  quantityIncrease(obj: any){
     
+    this.DetailsArray[obj].quantity+=1;
+  
+   this.DetailsArray[obj].Price=this.DetailsArray[obj].Price*this.DetailsArray[obj].quantity;
+  }
+  quantityDecrease( obj: any){
+    if(this.DetailsArray[obj].quantity>0){
+    this.DetailsArray[obj].quantity-=1;}
   }
 
 
+}

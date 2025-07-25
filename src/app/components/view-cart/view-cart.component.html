@@ -18,8 +18,9 @@
         <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profokile/demo/1@94.webp" /></div>
         <div class=" text-xl font-bold">{{ ItemData.pickleName }}</div>
         <div class="text-xl font-bold border-2 rounded-sm border-white p-4 hover:text-blue-800">
-          <span class="pr-3 hover:text-blue-50">-</span> Quantity <span class="pl-3 hover:text-blue-50"(click)="quantityIncrease(ItemData.id)">+</span>
+          <span class="pr-3 hover:text-blue-50"(click)="quantityDecrease(ItemData.id)">-</span>Quantity ({{ItemData.quantity}})<span class="pl-3 hover:text-blue-50"(click)="quantityIncrease(ItemData.id)">+</span>
         </div>
+        
         <div class="text-xl font-bold">{{ ItemData.Price }}/-</div>
       </li>
     </ol>
