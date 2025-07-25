@@ -1,41 +1,60 @@
 <div class="flex justify-center bg-yellow-600  w-screen rounded-md h-screen">
 
-<div class="h-screen">
-  <h1 class=" flex justify-center font-bold text-3xl shadow-50 pt-5 ">Cart Items<span> 
-    <svg
-        xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-3 ml-3" fill="none" viewBox="0 0 24 24"
-        stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg></span></h1>
- <div class="w-4xl">
+  <div class="h-screen">
+    <h1 class=" flex justify-center font-bold text-3xl shadow-50 pt-5 ">Cart Items<span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-3 ml-3" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg></span></h1>
+    <div class="w-4xl">
 
- 
-  <ng-container *ngIf="DetailsArray.length > 0; else emptySpace">
-        <a class="  border-2 border-white btn btn-ghost text-xl font-bold" routerLink="/pickles">Go back to order more Pickles</a>
-    <ol *ngFor="let ItemData of DetailsArray" class="list rounded-box shadow-md mt-5 mb-5 border-white border-2 text-white">
-      <li class="flex flex-row justify-evenly items-center  p-3 w-3/5">
-        <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profokile/demo/1@94.webp" /></div>
-        <div class=" text-xl font-bold">{{ ItemData.pickleName }}</div>
-        <div class="text-xl font-bold border-2 rounded-sm border-white p-4 hover:text-blue-800">
-          <span class="pr-3 hover:text-blue-50"(click)="quantityDecrease(ItemData.id)">-</span>Quantity ({{ItemData.quantity}})<span class="pl-3 hover:text-blue-50"(click)="quantityIncrease(ItemData.id)">+</span>
+
+      <ng-container *ngIf="DetailsArray.length > 0; else emptySpace">
+        <a class="  border-2 border-white btn btn-ghost text-xl font-bold" routerLink="/pickles">Go back to order more
+          Pickles</a>
+        <ol *ngFor="let ItemData of DetailsArray"
+          class="list rounded-box shadow-md mt-5 mb-5 border-white border-2 text-white">
+          <li class="flex flex-row justify-evenly items-center  p-3 w-3/5">
+            <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profokile/demo/1@94.webp" /></div>
+            <div class=" text-xl font-bold">{{ ItemData.pickleName }}</div>
+            <div class="text-xl font-bold border-2 rounded-sm border-white p-4 hover:text-blue-800">
+              <span class="pr-3 hover:text-blue-50 font-extrabold"
+                (click)="quantityDecrease(ItemData.id)">-</span>Quantity ({{ItemData.quantity}})<span
+                class="pl-3 hover:text-blue-50 font-extrabold" (click)="quantityIncrease(ItemData.id)">+</span>
+            </div>
+
+            <div class="text-xl font-bold">{{ ItemData.Price }}/-</div>
+            <i class="fa-solid fa-trash" (click)="trash()"></i>
+          </li>
+          <div *ngIf="visible" role="alert" class="alert alert-vertical sm:alert-horizontal">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              class="stroke-info h-6 w-6 shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Would you like to Delete Pickle from Cart?</span>
+            <div>
+              <button class="btn btn-sm">Deny</button>
+              <button class="btn btn-sm btn-primary" (click)="itemDelete(ItemData.id)">Accept</button>
+            </div>
+          </div>
+        </ol>
+      </ng-container>
+
+
+      <ng-template #emptySpace>
+        <div
+          class="w-4xl h-[400px] flex flex-col items-center justify-center opacity-40 text-white font-semibold italic">
+          <p>Cart is ready — waiting for pickles!</p>
+          <br>
+          <a class=" border-2 border-white btn btn-ghost text-xl font-bold" routerLink="/pickles">Go back to order
+            Pickles</a>
         </div>
-        
-        <div class="text-xl font-bold">{{ ItemData.Price }}/-</div>
-      </li>
-    </ol>
-  </ng-container>
 
-  <ng-template #emptySpace>
-    <div class="w-4xl h-[400px] flex flex-col items-center justify-center opacity-40 text-white font-semibold italic">
-      <p>Cart is ready — waiting for pickles!</p>
-    <br>
-        <a class=" border-2 border-white btn btn-ghost text-xl font-bold" routerLink="/pickles">Go back to order Pickles</a>
+      </ng-template>
     </div>
-  
-  </ng-template>
+
   </div>
 
 </div>
-
-  </div>
