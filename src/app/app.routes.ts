@@ -6,6 +6,8 @@ import { NonComponent } from './components/non/non.component';
 import { VegComponent } from './components/veg/veg.component';
 import { ButtonLoginComponent } from './components/button-login/button-login.component';
 import { ViewCartComponent } from './components/view-cart/view-cart.component';
+import { AuthComponent } from './components/auth/auth.component';
+
 export const routes: Routes = [
     {
         path: '', component: HomeComponent, title: "Home"
@@ -22,6 +24,7 @@ export const routes: Routes = [
 
     { path: "button-login", component: ButtonLoginComponent, title: "button-login" },
     
-    {path:"viewcart", component:ViewCartComponent, title:"ViewCart"}
+    {path:"viewcart", component:ViewCartComponent, title:"ViewCart"},
+    {path:"auth",component:AuthComponent,title:"auth"}
 
 ];

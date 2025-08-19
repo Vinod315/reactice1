@@ -14,12 +14,14 @@ export class CartService {
     this.selectedItem.next(item);
     
     const current = this.itemDetailsArraySubject.getValue();
+    
     this.itemDetailsArraySubject.next([...current, item]);
   }
 
   selectedItemUP$ = this.selectedItem.asObservable();
 
   num=new BehaviorSubject<number>(0);
+
   ChangeNum=this.num.asObservable();
 
   

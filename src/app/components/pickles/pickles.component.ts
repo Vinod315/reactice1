@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 interface PickleItem {
   pickleName: string;
   Price: number;
- 
+ urlLink:string;
 }
 
 interface Pickles {
@@ -31,12 +31,13 @@ export class PicklesComponent {
   item: PickleItem = {
     pickleName: '',
     Price: 0,
-  
+    urlLink:''
   };
   value = 0;
   num = 0;
   showAddedAlert = false;
   pickles :Pickles[]=[];
+  itemArray=[]
 
   constructor(private cartService: CartService) {
 
@@ -64,7 +65,7 @@ export class PicklesComponent {
     console.log("Mango button clicked ");
   }
 
-  cartButton(PickleName: string, Price: number) {
+  cartButton(PickleName: string, Price: number, pickleImage:string) {
     this.num = this.num + 1;
     this.cartService.changeNum(this.num);
     this.showAddedAlert = true;
@@ -72,7 +73,8 @@ export class PicklesComponent {
       this.showAddedAlert = false;
     }, 1500);
 
-    this.item = { pickleName: PickleName, Price: Price};
+    this.item = { pickleName: PickleName, Price: Price, urlLink:pickleImage};
+ 
     this.cartService.updateSelectedItem(this.item);
   };
 

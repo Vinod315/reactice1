@@ -8,7 +8,18 @@
             d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg></span></h1>
     <div class="w-4xl">
-
+ <div *ngIf="visible" role="alert" class="alert alert-vertical sm:alert-horizontal">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              class="stroke-info h-6 w-6 shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Would you like to Delete Pickle from Cart?</span>
+            <div>
+              <button class="btn btn-sm" (click)="deny()" >Deny</button>
+              <button class="btn btn-sm btn-primary" (click)="itemDelete()">Accept</button>
+            </div>
+          </div>
 
       <ng-container *ngIf="DetailsArray.length > 0; else emptySpace">
         <a class="  border-2 border-white btn btn-ghost text-xl font-bold" routerLink="/pickles">Go back to order more
@@ -16,7 +27,7 @@
         <ol *ngFor="let ItemData of DetailsArray"
           class="list rounded-box shadow-md mt-5 mb-5 border-white border-2 text-white">
           <li class="flex flex-row justify-evenly items-center  p-3 w-3/5">
-            <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profokile/demo/1@94.webp" /></div>
+            <div><img class="size-10 rounded-box" [src]=ItemData.urlLink /></div>
             <div class=" text-xl font-bold">{{ ItemData.pickleName }}</div>
             <div class="text-xl font-bold border-2 rounded-sm border-white p-4 hover:text-blue-800">
               <span class="pr-3 hover:text-blue-50 font-extrabold"
@@ -25,20 +36,9 @@
             </div>
 
             <div class="text-xl font-bold">{{ ItemData.Price }}/-</div>
-            <i class="fa-solid fa-trash" (click)="trash()"></i>
+            <i class="fa-solid fa-trash" (click)="trash(ItemData.id)"></i>
           </li>
-          <div *ngIf="visible" role="alert" class="alert alert-vertical sm:alert-horizontal">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              class="stroke-info h-6 w-6 shrink-0">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <span>Would you like to Delete Pickle from Cart?</span>
-            <div>
-              <button class="btn btn-sm">Deny</button>
-              <button class="btn btn-sm btn-primary" (click)="itemDelete(ItemData.id)">Accept</button>
-            </div>
-          </div>
+         
         </ol>
       </ng-container>
 

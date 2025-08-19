@@ -15,6 +15,7 @@ export class ViewCartComponent {
 DetailsArray :any[]=[];
 constructor(private cartService:CartService){}
   id=0
+  deleteReqItem:any;
 
   ngOnInit() {
     
@@ -46,14 +47,23 @@ constructor(private cartService:CartService){}
   }
   
   }
-  trash(){
+  trash(obj: any){
    this.visible=true;
-  }
-  itemDelete( obj: any){
+   const deleteReqItem=obj
+   setTimeout(() => {
+    this.visible=false;
+    
+   },3000);
 
-    const item=this.DetailsArray[obj]
+  }
+  itemDelete( ){
+
+    const item=this.DetailsArray[this.deleteReqItem]
     this.DetailsArray.splice(item,1);
     console.log(this.DetailsArray)
+  }
+  deny(){
+    this.visible=false;
   }
 
 
